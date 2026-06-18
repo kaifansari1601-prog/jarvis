@@ -5,13 +5,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
 }
 
 .square {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     border: 2px solid #000dff;
     box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
 }
@@ -51,4 +51,113 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+body {
+    background-color: #000;
+    /* To make the glow visible */
+    display: flex;
+    justify-content: center;
+    padding-top: 85px;
+}
+
+#TextInput {
+    background-color: #181818a8;
+    border: 1px solid blue;
+    box-shadow: 0 0 20px rgb(25, 0, 255),
+        inset 0 0 0px rgb(25, 0, 255);
+    border-radius: 8px;
+    color: white;
+    padding: 3px 0px 3px 20px;
+    margin: 0px 20%;
+}
+
+.input-field {
+    background-color: transparent;
+    border: none;
+    width: 85%;
+    outline: none;
+    color: white;
+    font-family: cursive;
+}
+
+.glow-on-hover {
+    width: 35px;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg,
+            #ff0000, #ff7300, #fffb00,
+            #48ff00, #00ffd5, #002bff,
+            #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:active {
+    color: #181818a8;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#canvasOne {
+    position: absolute;
+}
+
+#jarvisHood {
+    position: relative;
 }
