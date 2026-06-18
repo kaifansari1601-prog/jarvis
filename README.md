@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Jarvis Logo" width="180">
+  <img src="www/assets/img/jarvis.png" alt="Jarvis Logo" width="180">
 </p>
 
 <h1 align="center">JARVIS AI</h1>
